@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Coins</title>
+    <meta name="description" content="A brief description of your website or page content.">
+    <meta name="keywords" content="FREE scholarships, free money, s, "> 
+    <style>
+        body {
+            margin-left: 300px;
+            margin-right: 300px;
+            background-color: antiquewhite;
+        }
+        h2 {
+            text-align: center;
+            font-size: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        b {
+            text-align: center;
+            font-size: 20px;
+        }
+        h6 {
+            text-align: center;
+            font-size: 25px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Your request is pending. Complete the following tasks to confirm that you are human</h2>
+    
+    <div id="tasks">
+        <input type="checkbox" id="task1"> Subscribe to this channel <a href="https://www.youtube.com/channel/UCDL6PBnnd8Rwumuzvlo2AVg" target="_blank">Subscribe channel</a><br>
+        <input type="checkbox" id="task2"> Watch this video until it ends <a href="https://youtu.be/saHRwkC-z4g?si=PKZ8Xf2ah4GBCPlI" target="_blank">Watch video</a><br>
+        <input type="checkbox" id="task3"> Watch this video for 3 minutes <a href="https://youtu.be/Nv70Xw3t2j0?si=Bgx2nUI0zS5FZeBN" target="_blank">Watch video</a><br>
+        <input type="checkbox" id="task4"> Like and follow this page <a href="https://web.facebook.com/profile.php?id=61566034689954" target="_blank">Follow page</a><br>
+        <input type="checkbox" id="task5"> Share this website in 20 active Facebook groups <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL_HERE" target="_blank">Share website</a><br>
+        <input type="checkbox" id="task6"> Share this website to 5 WhatsApp groups <a href="https://wa.me/?text=Check%20out%20this%20link:%20https://example.com" target="_blank">Share website</a><br>
+    </div>
+
+    <button id="continueBtn" class="hidden">Continue</button>
+    <p id="message" class="hidden" style="color: red;">Please complete all tasks before continuing.</p>
+    
+    <h3>Any cheating will lead to request decline. We have anticheating systems that are ready to take and burn their coins claimed.</h3>
+    <b>Transactions take 2 to 3 days.</b>
+    <b>This can be done many times if you have many emails in order to increase your chance. Make sure that you switch the Google account if you are going to make other claims but use the same wallet. Be honest!</b>
+    <h6><a href="index.html.html">Increase the chance using another email</a></h6>
+
+    <script>
+        const continueBtn = document.getElementById('continueBtn');
+        const message = document.getElementById('message');
+        const tasks = [
+            document.getElementById('task1'),
+            document.getElementById('task2'),
+            document.getElementById('task3'),
+            document.getElementById('task4'),
+            document.getElementById('task5'),
+            document.getElementById('task6')
+        ];
+
+        tasks.forEach(task => {
+            task.addEventListener('change', checkTasks);
+        });
+
+        function checkTasks() {
+            const allCompleted = tasks.every(task => task.checked);
+            if (allCompleted) {
+                continueBtn.classList.remove('hidden');
+                message.classList.add('hidden');
+            } else {
+                continueBtn.classList.add('hidden');
+                message.classList.remove('hidden');
+            }
+        }
+
+        continueBtn.addEventListener('click', function() {
+            // Redirect or perform the next action
+            window.location.href = ''; // Change to your next page URL
+        });
+    </script>
+</body>
+</html>
